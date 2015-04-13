@@ -36,23 +36,30 @@
         android:layout_alignTop="@+id/txtViewAantalPlaatsen"
         android:layout_toEndOf="@+id/txtViewAantalPlaatsen" />
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@android:id/list"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btnKledijOverzicht"
+        android:layout_below="@+id/txtViewAantalPlaatsen" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnOverzichtKledij"
         android:id="@+id/btnKledijOverzicht"
-        android:layout_below="@+id/txtViewAantalPlaatsen"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="95dp"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/btnPlaatsenOverzicht"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnOverzichtPlaatsen"
         android:id="@+id/btnPlaatsenOverzicht"
-        android:layout_below="@+id/btnKledijOverzicht"
-        android:layout_alignEnd="@+id/btnKledijOverzicht"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
 
 

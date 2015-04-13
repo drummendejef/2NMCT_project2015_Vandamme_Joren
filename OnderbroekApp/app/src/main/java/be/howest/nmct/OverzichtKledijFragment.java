@@ -26,5 +26,13 @@ public class OverzichtKledijFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_overzicht_kledij, container, false);
     }
 
+    //Openen van deze fragment nadat deze opgeroepen wordt vanuit "Overzicht"
+    public static OverzichtKledijFragment newInstance()
+    {
+        OverzichtKledijFragment fragment = new OverzichtKledijFragment();
+
+        return fragment;
+    }
+
 
 }

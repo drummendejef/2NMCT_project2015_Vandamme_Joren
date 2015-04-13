@@ -3,6 +3,8 @@ package be.howest.nmct;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,7 +22,7 @@ public class Overzicht extends Activity {
         setContentView(R.layout.activity_overzicht);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new OverzichtFragment())
                     .commit();
         }
     }
@@ -48,19 +50,20 @@ public class Overzicht extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
+    //Roept OverzichtKledijFragment op
+    public void showFragmentOverzichtKledij()
+    {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        public PlaceholderFragment() {
-        }
+        OverzichtKledijFragment kledijFragment = OverzichtKledijFragment.newInstance();
+        fragmentTransaction.replace(R.id.container, kledijFragment);
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_overzicht, container, false);
-            return rootView;
-        }
+        //Deze overgang toevoegen aan de back stack, dit is om te zorgen dat nadat hij gedaan is
+        //En er op de back knop geklikt wordt, hij later terug hier op komt.
+        fragmentTransaction.addToBackStack("showFragmentOverzichtKledij");
+        fragmentTransaction.commit();
+
+        setTitle("Overzicht Kledij Fragment");
     }
 }
