@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewKledingstuk"
+        android:background="@drawable/broek"
+        android:cropToPadding="false"
+        android:maxWidth="150px"
+        android:maxHeight="150px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/txtViewKledingNaam"
+        android:id="@+id/txtViewKledingNaam"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageViewKledingstuk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txtViewPlaats"
+        android:id="@+id/txtViewPlaats"
+        android:layout_below="@+id/txtViewKledingNaam"
+        android:layout_toEndOf="@+id/imageViewKledingstuk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtViewKledingBeschrijving"
+        android:id="@+id/txtViewKledingBeschrijving"
+        android:layout_alignBottom="@+id/imageViewKledingstuk"
+        android:layout_alignEnd="@+id/txtViewKledingNaam"
+        android:layout_toEndOf="@+id/imageViewKledingstuk"
+        android:layout_below="@+id/txtViewPlaats" />
+
+</RelativeLayout>

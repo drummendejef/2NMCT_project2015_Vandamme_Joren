@@ -8,4 +8,7 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtViewKledingNaam">Naam kledingsstuk</string>
+    <string name="txtViewKledingBeschrijving">Beschrijving van kledingsstuk</string>
+    <string name="txtViewPlaats">Plaats van kledingsstuk</string>
 </resources>
