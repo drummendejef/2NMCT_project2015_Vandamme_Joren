@@ -4,4 +4,5 @@
     <string name="btnOverzichtKledij">Overzicht Kledij</string>
     <string name="txtviewAantalKledingstukken">Aantal Kledingstukken:</string>
     <string name="txtViewAantalPlaatsen">Aantal plaatsen:</string>
+    <string name="btnOverzichtPlaatsen">Overzicht Plaatsen</string>
 </resources>
