@@ -3,4 +3,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="textViewOverzichtKledingstukken">Overzicht Kledingstukken</string>
+    <string name="txtViewKledingNaam">Naam</string>
+    <string name="txtViewPlaats">Plaats</string>
+    <string name="txtViewKledingBeschrijving">Beschrijving</string>
 </resources>
