@@ -76,7 +76,7 @@ public class MainFragment extends ListFragment implements LoaderManager.LoaderCa
         public void bindView(View view, Context context, Cursor cursor) {
             super.bindView(view, context, cursor);
 
-            
+
 
 
         }

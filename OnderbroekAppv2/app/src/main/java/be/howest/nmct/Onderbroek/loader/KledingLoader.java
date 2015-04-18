@@ -65,6 +65,8 @@ public class KledingLoader extends AsyncTaskLoader<Cursor>{
                 MatrixCursor.RowBuilder row = cursor.newRow();
                 row.add(id);
                 row.add(kledingstuk.getNaamKledingstuk());
+                row.add(kledingstuk.getPlaatsKledingstuk());
+                row.add(kledingstuk.getBeschrijvingKledingstuk());
                 id++;
             }
             mCursor = cursor;

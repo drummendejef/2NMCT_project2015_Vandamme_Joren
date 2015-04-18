@@ -13,9 +13,9 @@ public class KledingstukAdmin {
     static  {
         kledingstukken = new ArrayList<Kledingstuk>();
 
-        Kledingstuk k1 = new Kledingstuk("Groene broek");
-        Kledingstuk k2 = new Kledingstuk("Rode shirt");
-        Kledingstuk k3 = new Kledingstuk("Witte kousen");
+        Kledingstuk k1 = new Kledingstuk("Groene broek", "Kortrijk", "Gekregen voor plechtige communie");
+        Kledingstuk k2 = new Kledingstuk("Rode shirt", "Mama", "Met GTA logo");
+        Kledingstuk k3 = new Kledingstuk("Witte kousen", "Papa", "Standaard witte kousen");
 
         kledingstukken.add(k1);
         kledingstukken.add(k2);
