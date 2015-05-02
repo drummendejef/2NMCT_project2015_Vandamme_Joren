@@ -47,6 +47,12 @@ public class MainFragment extends ListFragment implements LoaderManager.LoaderCa
 
     }
 
+    //Om van fragment te wisselen (deze te openen)
+    public static MainFragment newInstance()
+    {
+        return new MainFragment();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_main, container, false);

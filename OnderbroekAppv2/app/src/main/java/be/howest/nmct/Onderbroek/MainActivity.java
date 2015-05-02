@@ -3,6 +3,8 @@ package be.howest.nmct.Onderbroek;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,6 +26,39 @@ public class MainActivity extends Activity {
                     .addToBackStack(null)
                     .commit();
         }
+    }
+
+    //Code om te wisselen van fragment
+    public void showMainFragment()
+    {
+        // Create new fragment and transaction
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        MainFragment mainFragment = MainFragment.newInstance();
+        fragmentTransaction.replace(R.id.container, mainFragment);
+
+        //Vangt de back toets op
+        fragmentTransaction.addToBackStack("showMainFragment");
+        fragmentTransaction.commit();
+
+        setTitle("MainFragment");
+    }
+
+    public void showGoogleMapsFragment()
+    {
+        //Create new fragment and transaction
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        GoogleMapsFragment googleMapsFragment = GoogleMapsFragment.newInstance();
+        fragmentTransaction.replace(R.id.container, googleMapsFragment);
+
+        //Vangt de back toets op
+        fragmentTransaction.addToBackStack("showGoogleMapsFragment");
+        fragmentTransaction.commit();
+
+        setTitle("Map");
     }
 
 
