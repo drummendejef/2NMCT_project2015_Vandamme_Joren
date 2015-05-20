@@ -46,14 +46,13 @@ public class MainActivity extends Activity {
         setTitle("MainFragment");
     }
 
-    public void showGoogleMapsFragment(String lat, String lon)
+    public void showGoogleMapsFragment()
     {
         //Create new fragment and transaction
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        //Nieuwe instantie aanmaken en open trekken.
-        GoogleMapsFragment googleMapsFragment = GoogleMapsFragment.newInstance(lat, lon);
+        GoogleMapsFragment googleMapsFragment = GoogleMapsFragment.newInstance();
         fragmentTransaction.replace(R.id.container, googleMapsFragment);
 
         //Vangt de back toets op
