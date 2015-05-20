@@ -1,6 +1,5 @@
 package be.howest.nmct.Onderbroek;
 
-import android.app.Activity;
 import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.content.Context;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
 
 import be.howest.nmct.Onderbroek.loader.Contract;
@@ -22,35 +20,8 @@ import be.howest.nmct.Onderbroek.loader.KledingLoader;
 public class MainFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
     KledingAdapter mAdapter;
 
-    OnStartChangeFragment mCallback;
-
-    public interface OnStartChangeFragment {
-        public void showGoogleMapsFragment(double lat, double lon);
-    }
-
-
-
-    //Properties
-    private Button btnOpenMap;
-
     //Required, lege constructor
     public MainFragment() {
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
-        //Zorgen dat de container activity zeker de callback interface
-        //geïmplementeerd is, anders exception gooien
-        try
-        {
-            mCallback = (OnStartChangeFragment) activity;
-        }
-        catch (ClassCastException e)
-        {
-            throw new ClassCastException(activity.toString() + "moet OnStartChangeFragment implementeren");
-        }
     }
 
     @Override
@@ -84,24 +55,7 @@ public class MainFragment extends ListFragment implements LoaderManager.LoaderCa
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_main, container, false);
-
-        //ViewControls koppelen.
-        btnOpenMap = (Button) v.findViewById(R.id.buttonOpenMapFragment);
-
-        //Listener aan de button koppelen
-        btnOpenMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenGoogleMapsFragment();
-            }
-        });
-
-        return v;
-    }
-
-    private void OpenGoogleMapsFragment() {
-        mCallback.showGoogleMapsFragment(50.824518,3.2480504);
+        return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
     @Override
