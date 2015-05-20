@@ -22,8 +22,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    //.add(R.id.container, new MainFragment())
-                    .add(R.id.container, new GoogleMapsFragment())
+                    .add(R.id.container, new MainFragment())
+                    //.add(R.id.container, new GoogleMapsFragment())//Debugging van googlemapsfragment.
                     .addToBackStack(null)
                     .commit();
         }
@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    /*public static class PlaceholderFragment extends Fragment {
 
         public PlaceholderFragment() {
         }
@@ -99,5 +99,5 @@ public class MainActivity extends Activity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
-    }
+    }*/
 }
