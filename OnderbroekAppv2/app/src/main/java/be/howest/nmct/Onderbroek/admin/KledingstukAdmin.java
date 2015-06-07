@@ -16,10 +16,12 @@ public class KledingstukAdmin {
         Kledingstuk k1 = new Kledingstuk("Groene broek", "Kortrijk", "Gekregen voor plechtige communie");
         Kledingstuk k2 = new Kledingstuk("Rode shirt", "Mama", "Met GTA logo");
         Kledingstuk k3 = new Kledingstuk("Witte kousen", "Papa", "Standaard witte kousen");
+        Kledingstuk k4 = new Kledingstuk("Dikke trui", "Kortrijk", "Egaal, erg dik");
 
         kledingstukken.add(k1);
         kledingstukken.add(k2);
         kledingstukken.add(k3);
+        kledingstukken.add(k4);
 
    }
 

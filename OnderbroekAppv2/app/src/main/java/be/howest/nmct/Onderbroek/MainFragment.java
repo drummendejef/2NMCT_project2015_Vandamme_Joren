@@ -1,5 +1,6 @@
 package be.howest.nmct.Onderbroek;
 
+import android.app.Activity;
 import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
 
 import be.howest.nmct.Onderbroek.loader.Contract;
@@ -19,6 +21,9 @@ import be.howest.nmct.Onderbroek.loader.KledingLoader;
  */
 public class MainFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
     KledingAdapter mAdapter;
+    Button btnToonPlaatsen;
+
+    private OnMainFragmentListener mListener;
 
     //Required, lege constructor
     public MainFragment() {
@@ -55,7 +60,19 @@ public class MainFragment extends ListFragment implements LoaderManager.LoaderCa
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View v = inflater.inflate(R.layout.fragment_main, container, false);
+
+        btnToonPlaatsen = (Button)v.findViewById(R.id.buttontoonplaatsen);
+
+        //Buttonknop actie opvangen
+        btnToonPlaatsen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.demandPlaatsenFragment();
+            }
+        });
+
+        return v;
     }
 
     @Override
@@ -71,6 +88,22 @@ public class MainFragment extends ListFragment implements LoaderManager.LoaderCa
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mAdapter.swapCursor(null);
+    }
+
+    /*@Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnMainFragmentListener) activity;
+        } catch (ClassCastException e)
+        {
+            throw new ClassCastException(activity.toString()
+                    + " moet OnFragmentInteractionListener Implementeren");
+        }
+    }*/
+
+    public interface OnMainFragmentListener {
+        public void demandPlaatsenFragment();
     }
 
     class KledingAdapter extends SimpleCursorAdapter {

@@ -22,8 +22,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    //.add(R.id.container, new MainFragment())
-                    .add(R.id.container, new GoogleMapsFragment())
+                    .add(R.id.container, new MainFragment())
+                    //.add(R.id.container, new GoogleMapsFragment())
                     .addToBackStack(null)
                     .commit();
         }
@@ -44,6 +44,30 @@ public class MainActivity extends Activity {
         fragmentTransaction.commit();
 
         setTitle("MainFragment");
+    }
+
+    //Code om te wisselen naar het plaatsenfragment
+    public void showPlaatsenFragment()
+    {
+        //Create new fragment and transaction
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        PlaatsenFragment plaatsenFragment = PlaatsenFragment.newInstance();
+        fragmentTransaction.replace(R.id.container, plaatsenFragment);
+
+        //Vangt de back toets op
+        fragmentTransaction.addToBackStack("showPlaatsenFragment");
+        fragmentTransaction.commit();
+
+        setTitle("PlaatsenFragment");
+    }
+
+    //Opvangen van wissel
+    //@Override
+    public void demandPlaatsenFragment()
+    {
+        showPlaatsenFragment();
     }
 
     public void showGoogleMapsFragment()
