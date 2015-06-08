@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements MainFragment.OnMainFragmentListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
     }
 
     //Opvangen van wissel
-    //@Override
+    @Override
     public void demandPlaatsenFragment()
     {
         showPlaatsenFragment();
