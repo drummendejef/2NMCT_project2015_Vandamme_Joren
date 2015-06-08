@@ -90,7 +90,7 @@ public class MainFragment extends ListFragment implements LoaderManager.LoaderCa
         mAdapter.swapCursor(null);
     }
 
-    /*@Override
+    @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
@@ -100,7 +100,7 @@ public class MainFragment extends ListFragment implements LoaderManager.LoaderCa
             throw new ClassCastException(activity.toString()
                     + " moet OnFragmentInteractionListener Implementeren");
         }
-    }*/
+    }
 
     public interface OnMainFragmentListener {
         public void demandPlaatsenFragment();
