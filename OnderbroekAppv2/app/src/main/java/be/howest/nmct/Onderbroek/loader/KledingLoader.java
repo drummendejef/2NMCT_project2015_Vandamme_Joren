@@ -21,7 +21,9 @@ public class KledingLoader extends AsyncTaskLoader<Cursor>{
             Contract.KledijColumns.COLUMN_KLEDING_NAAM,
             Contract.KledijColumns.COLUMN_KLEDING_BESCHRIJVING,
             Contract.KledijColumns.COLUMN_KLEDING_PLAATS,
-            Contract.KledijColumns.COLUMN_KLEDING_TYPE
+            Contract.KledijColumns.COLUMN_KLEDING_TYPE,
+            Contract.KledijColumns.COLUMN_X_COORDINAAT,
+            Contract.KledijColumns.COLUMN_Y_COORDINAAT
     };
 
     private static Object lock = new Object();
@@ -67,6 +69,8 @@ public class KledingLoader extends AsyncTaskLoader<Cursor>{
                 row.add(kledingstuk.getNaamKledingstuk());
                 row.add(kledingstuk.getPlaatsKledingstuk());
                 row.add(kledingstuk.getBeschrijvingKledingstuk());
+                row.add(kledingstuk.getXcoordinaat());
+                row.add(kledingstuk.getYcoordinaat());
                 id++;
             }
             mCursor = cursor;

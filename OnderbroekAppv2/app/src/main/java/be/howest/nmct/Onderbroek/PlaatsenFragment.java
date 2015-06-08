@@ -50,8 +50,12 @@ public class PlaatsenFragment extends ListFragment implements LoaderManager.Load
                 null,
                 new String[]{
                         Contract.KledijColumns.COLUMN_KLEDING_PLAATS,
+                        Contract.KledijColumns.COLUMN_X_COORDINAAT,
+                        Contract.KledijColumns.COLUMN_Y_COORDINAAT,
                 },
-                new int[]{R.id.textViewLocatieNaam},0);
+                new int[]{R.id.textViewLocatieNaam,
+                    R.id.textViewXCoordinaat,
+                    R.id.textViewYCoordinaat,},0);
 
         setListAdapter(mAdapter);
 

@@ -13,10 +13,10 @@ public class KledingstukAdmin {
     static  {
         kledingstukken = new ArrayList<Kledingstuk>();
 
-        Kledingstuk k1 = new Kledingstuk("Groene broek", "Kortrijk", "Gekregen voor plechtige communie");
-        Kledingstuk k2 = new Kledingstuk("Rode shirt", "Mama", "Met GTA logo");
-        Kledingstuk k3 = new Kledingstuk("Witte kousen", "Papa", "Standaard witte kousen");
-        Kledingstuk k4 = new Kledingstuk("Dikke trui", "Kortrijk", "Egaal, erg dik");
+        Kledingstuk k1 = new Kledingstuk("Groene broek", "Kortrijk", "Gekregen voor plechtige communie", "50.8248942", "3.258114");
+        Kledingstuk k2 = new Kledingstuk("Rode shirt", "Mama", "Met GTA logo", "50.9776751", "4.44978");
+        Kledingstuk k3 = new Kledingstuk("Witte kousen", "Papa", "Standaard witte kousen", "51.0029651", "4.713465");
+        Kledingstuk k4 = new Kledingstuk("Dikke trui", "Kortrijk", "Egaal, erg dik", "50.8248942", "3.258114");
 
         kledingstukken.add(k1);
         kledingstukken.add(k2);
